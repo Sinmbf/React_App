@@ -1,7 +1,21 @@
-import "bootstrap/dist/css/bootstrap.css";
+import { useState } from "react";
+import Alert from "./components/Alert";
+import Button from "./components/Button";
 
-function App() {
-  return <h1>Hello Sinmbf</h1>;
+export default function App() {
+  const [alertVisible, setAlertVisible] = useState(false);
+  // Helper function to handleClick
+  const handleClick = () => {
+    setAlertVisible(true);
+  };
+  return (
+    <>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisible(false)} color="danger">
+          Attention!
+        </Alert>
+      )}
+      <Button handleClick={handleClick} />
+    </>
+  );
 }
-
-export default App;
