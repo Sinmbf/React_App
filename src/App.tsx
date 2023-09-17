@@ -15,7 +15,7 @@ export default function App() {
           Attention!
         </Alert>
       )}
-      <Button handleClick={handleClick} />
+      <Button text="Click Me" handleClick={handleClick} />
     </>
   );
 }
